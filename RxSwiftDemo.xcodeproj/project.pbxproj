@@ -58,6 +58,7 @@
 		216382132461376E0066BCD0 /* MaskPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskPointTests.swift; sourceTree = "<group>"; };
 		21638215246140D60066BCD0 /* MaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskTableViewCell.swift; sourceTree = "<group>"; };
 		21638216246140D60066BCD0 /* MaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaskTableViewCell.xib; sourceTree = "<group>"; };
+		2163821C24614AEF0066BCD0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		40D8CE1DCBDBAE1F5A3B4210 /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427860B64675875E8F9E3021 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAB2A09F5FA0049E828BCC8 /* Pods-RxSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		216381FD24601F880066BCD0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2163821C24614AEF0066BCD0 /* README.md */,
 				216381E924601F810066BCD0 /* Info.plist */,
 				216381E424601F810066BCD0 /* Assets.xcassets */,
 			);
