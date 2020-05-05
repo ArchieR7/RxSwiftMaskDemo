@@ -23,6 +23,7 @@
 		216382142461376E0066BCD0 /* MaskPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216382132461376E0066BCD0 /* MaskPointTests.swift */; };
 		21638217246140D60066BCD0 /* MaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21638215246140D60066BCD0 /* MaskTableViewCell.swift */; };
 		21638218246140D60066BCD0 /* MaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21638216246140D60066BCD0 /* MaskTableViewCell.xib */; };
+		2163821B2461485B0066BCD0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163821A2461485B0066BCD0 /* DatabaseManager.swift */; };
 		23E9A59DC7E2E47D51378E57 /* Pods_RxSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987CDA0F71BCF3A9904F7C91 /* Pods_RxSwiftDemoTests.framework */; };
 		4C1237A99C28ACB5C9AA5308 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D8CE1DCBDBAE1F5A3B4210 /* Pods_RxSwiftDemo.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		21638215246140D60066BCD0 /* MaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskTableViewCell.swift; sourceTree = "<group>"; };
 		21638216246140D60066BCD0 /* MaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaskTableViewCell.xib; sourceTree = "<group>"; };
 		2163821C24614AEF0066BCD0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		2163821A2461485B0066BCD0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		40D8CE1DCBDBAE1F5A3B4210 /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427860B64675875E8F9E3021 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAB2A09F5FA0049E828BCC8 /* Pods-RxSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		216381FF24601F990066BCD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				216382192461484D0066BCD0 /* Database */,
 				216382012460216E0066BCD0 /* Netwotk */,
 			);
 			path = Models;
@@ -212,6 +215,14 @@
 			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
+		216382192461484D0066BCD0 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				2163821A2461485B0066BCD0 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		26BF8CA9EE078898C44556ED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,7 +273,6 @@
 				216381EA24601F810066BCD0 /* Sources */,
 				216381EB24601F810066BCD0 /* Frameworks */,
 				216381EC24601F810066BCD0 /* Resources */,
-				E8D36F2BF488E4A5027DBAB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,23 +405,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8D36F2BF488E4A5027DBAB6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -421,6 +414,7 @@
 			files = (
 				216382082460230C0066BCD0 /* MaskPoint.swift in Sources */,
 				216381E024601F7E0066BCD0 /* ViewController.swift in Sources */,
+				2163821B2461485B0066BCD0 /* DatabaseManager.swift in Sources */,
 				21638210246136A60066BCD0 /* MaskPointTableViewModel.swift in Sources */,
 				21638203246021870066BCD0 /* NetworkKit.swift in Sources */,
 				216381DC24601F7E0066BCD0 /* AppDelegate.swift in Sources */,

@@ -9,6 +9,7 @@ target 'RxSwiftDemo' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Moya/RxSwift', '~> 14.0'
+  pod 'CouchbaseLite-Swift'
 
   target 'RxSwiftDemoTests' do
     inherit! :search_paths
