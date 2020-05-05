@@ -18,6 +18,11 @@
 		21638206246022770066BCD0 /* MaskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21638205246022770066BCD0 /* MaskAPI.swift */; };
 		216382082460230C0066BCD0 /* MaskPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216382072460230C0066BCD0 /* MaskPoint.swift */; };
 		2163820B2460248B0066BCD0 /* MaskAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163820A2460248B0066BCD0 /* MaskAPITests.swift */; };
+		2163820E2461283F0066BCD0 /* MaskCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163820D2461283F0066BCD0 /* MaskCellModel.swift */; };
+		21638210246136A60066BCD0 /* MaskPointTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2163820F246136A60066BCD0 /* MaskPointTableViewModel.swift */; };
+		216382142461376E0066BCD0 /* MaskPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216382132461376E0066BCD0 /* MaskPointTests.swift */; };
+		21638217246140D60066BCD0 /* MaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21638215246140D60066BCD0 /* MaskTableViewCell.swift */; };
+		21638218246140D60066BCD0 /* MaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21638216246140D60066BCD0 /* MaskTableViewCell.xib */; };
 		23E9A59DC7E2E47D51378E57 /* Pods_RxSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 987CDA0F71BCF3A9904F7C91 /* Pods_RxSwiftDemoTests.framework */; };
 		4C1237A99C28ACB5C9AA5308 /* Pods_RxSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D8CE1DCBDBAE1F5A3B4210 /* Pods_RxSwiftDemo.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +53,11 @@
 		21638205246022770066BCD0 /* MaskAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskAPI.swift; sourceTree = "<group>"; };
 		216382072460230C0066BCD0 /* MaskPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskPoint.swift; sourceTree = "<group>"; };
 		2163820A2460248B0066BCD0 /* MaskAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskAPITests.swift; sourceTree = "<group>"; };
+		2163820D2461283F0066BCD0 /* MaskCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskCellModel.swift; sourceTree = "<group>"; };
+		2163820F246136A60066BCD0 /* MaskPointTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskPointTableViewModel.swift; sourceTree = "<group>"; };
+		216382132461376E0066BCD0 /* MaskPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskPointTests.swift; sourceTree = "<group>"; };
+		21638215246140D60066BCD0 /* MaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskTableViewCell.swift; sourceTree = "<group>"; };
+		21638216246140D60066BCD0 /* MaskTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MaskTableViewCell.xib; sourceTree = "<group>"; };
 		40D8CE1DCBDBAE1F5A3B4210 /* Pods_RxSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427860B64675875E8F9E3021 /* Pods-RxSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemo/Pods-RxSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAB2A09F5FA0049E828BCC8 /* Pods-RxSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftDemoTests.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftDemoTests/Pods-RxSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,10 +109,11 @@
 		216381DA24601F7E0066BCD0 /* RxSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2163820024601F9C0066BCD0 /* Views */,
-				216381FF24601F990066BCD0 /* Models */,
 				216381FE24601F900066BCD0 /* AppDelegate */,
+				216381FF24601F990066BCD0 /* Models */,
 				216381FD24601F880066BCD0 /* Sources */,
+				2163820C246128280066BCD0 /* ViewModels */,
+				2163820024601F9C0066BCD0 /* Views */,
 			);
 			path = RxSwiftDemo;
 			sourceTree = "<group>";
@@ -110,9 +121,10 @@
 		216381F124601F810066BCD0 /* RxSwiftDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				216382092460247C0066BCD0 /* NetworkTests */,
-				216381F224601F810066BCD0 /* RxSwiftDemoTests.swift */,
 				216381F424601F810066BCD0 /* Info.plist */,
+				216381F224601F810066BCD0 /* RxSwiftDemoTests.swift */,
+				21638212246137580066BCD0 /* ViewModelTests */,
+				216382092460247C0066BCD0 /* NetworkTests */,
 			);
 			path = RxSwiftDemoTests;
 			sourceTree = "<group>";
@@ -146,7 +158,9 @@
 		2163820024601F9C0066BCD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				21638215246140D60066BCD0 /* MaskTableViewCell.swift */,
 				216381DF24601F7E0066BCD0 /* ViewController.swift */,
+				21638216246140D60066BCD0 /* MaskTableViewCell.xib */,
 				216381E624601F810066BCD0 /* LaunchScreen.storyboard */,
 				216381E124601F7E0066BCD0 /* Main.storyboard */,
 			);
@@ -177,6 +191,23 @@
 				2163820A2460248B0066BCD0 /* MaskAPITests.swift */,
 			);
 			path = NetworkTests;
+			sourceTree = "<group>";
+		};
+		2163820C246128280066BCD0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2163820D2461283F0066BCD0 /* MaskCellModel.swift */,
+				2163820F246136A60066BCD0 /* MaskPointTableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		21638212246137580066BCD0 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				216382132461376E0066BCD0 /* MaskPointTests.swift */,
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		26BF8CA9EE078898C44556ED /* Pods */ = {
@@ -285,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				216381E824601F810066BCD0 /* LaunchScreen.storyboard in Resources */,
+				21638218246140D60066BCD0 /* MaskTableViewCell.xib in Resources */,
 				216381E524601F810066BCD0 /* Assets.xcassets in Resources */,
 				216381E324601F7E0066BCD0 /* Main.storyboard in Resources */,
 			);
@@ -387,9 +419,12 @@
 			files = (
 				216382082460230C0066BCD0 /* MaskPoint.swift in Sources */,
 				216381E024601F7E0066BCD0 /* ViewController.swift in Sources */,
+				21638210246136A60066BCD0 /* MaskPointTableViewModel.swift in Sources */,
 				21638203246021870066BCD0 /* NetworkKit.swift in Sources */,
 				216381DC24601F7E0066BCD0 /* AppDelegate.swift in Sources */,
 				216381DE24601F7E0066BCD0 /* SceneDelegate.swift in Sources */,
+				2163820E2461283F0066BCD0 /* MaskCellModel.swift in Sources */,
+				21638217246140D60066BCD0 /* MaskTableViewCell.swift in Sources */,
 				21638206246022770066BCD0 /* MaskAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +435,7 @@
 			files = (
 				2163820B2460248B0066BCD0 /* MaskAPITests.swift in Sources */,
 				216381F324601F810066BCD0 /* RxSwiftDemoTests.swift in Sources */,
+				216382142461376E0066BCD0 /* MaskPointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

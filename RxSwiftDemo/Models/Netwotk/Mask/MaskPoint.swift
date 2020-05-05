@@ -38,18 +38,11 @@ import Foundation
 
 struct MaskPoint: Decodable {
     let properties: Property
-    let geometry: Geometry
 }
 
 extension MaskPoint {
     struct Property: Decodable {
-        let id, name, phone, address, updated, available, note: String
-        let maskAdult, maskChild: Int
-    }
-    
-    struct Geometry: Decodable {
-        let coordinates: [Double]
-        var latitude: Double? { coordinates.first }
-        var longitude: Double? { coordinates.last }
+        let id, county, updated: String
+        let maskAdult: Int
     }
 }
