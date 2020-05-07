@@ -14,7 +14,9 @@ final class DatabaseManager {
     
     private init() {
         do {
-            database = try Database(name: "db")
+            database = try Database(name: "RxSwiftDemoDB")
+            guard let path: String = database.path else { return }
+            print("Couchbase path : \(path)")
         } catch {
             fatalError(error.localizedDescription)
         }
@@ -23,6 +25,7 @@ final class DatabaseManager {
     func create(point: MaskPoint, note: String) {
         let document: MutableDocument = MutableDocument(id: point.properties.id)
         document.setValue(note, forKey: "note")
+        document.setValue(point.properties.county, forKey: "county")
         do {
             try database.saveDocument(document)
         } catch {
@@ -49,17 +52,21 @@ final class DatabaseManager {
             } catch {
                 print(error.localizedDescription)
             }
+        } else {
+            print("cannnot find the \(point.properties.id)")
         }
     }
     
     func getNote(point: MaskPoint) -> String? {
-        let query = QueryBuilder.select(SelectResult.expression(Meta.id), SelectResult.expression(Expression.property("county")))
+        let query = QueryBuilder.select(SelectResult.all())
             .from(DataSource.database(database))
             .where(Expression.property("county").equalTo(Expression.string(point.properties.county)))
             .limit(Expression.int(1))
         do {
             let result: ResultSet = try query.execute()
-            return Array(result).first?.string(forKey: "note")
+            guard let point: Result = result.allResults().first else { return nil }
+            guard let dictionary = point.dictionary(forKey: "RxSwiftDemoDB") else { return nil }
+            return dictionary.string(forKey: "note")
         } catch {
             print(error.localizedDescription)
             return nil
